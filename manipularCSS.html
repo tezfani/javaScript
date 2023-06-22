@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .pequeno{
+            width: 100px;
+            height: 100px;
+            margin: auto;
+            margin-top: 3px;
+            border: solid 2px black;
+        }
+        .grande{
+            width: 300px;
+            height: 300px;
+            margin: auto;
+            margin-top: 3px;
+            border: solid 2px black;
+        }
+        .quadrado{
+            border-radius: 0%;
+        }
+        .redondo{
+            border-radius: 100%;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alternarTamanho()">Alternar Tamanho</button>
+    <button onclick="alternarForma()">Alternar Forma</button>
+    <button onclick="mudarTamanho('pequeno')">Pequeno</button>
+    <button onclick="mudarTamanho('grande')">Grande</button>
+    <button onclick="mudarCor('#0000ff')">Azul</button>
+    <button onclick="mudarCor('#ff1a1a')">Vermelho</button>
+    <button onclick="mudarCor('#ffff00')">Amarelo</button>
+    <div id="frame" class="pequeno quadrado"></div>
+    <script>
+        var div = document.querySelector('#frame')
+        function alternarForma(){
+            div.classList.toggle('quadrado')
+            div.classList.toggle('redondo')
+        }
+        function mudarTamanho(tamanho){
+            div.classList.remove('pequeno', 'grande')
+            div.classList.add(tamanho)
+        }
+        function alternarTamanho(){
+            div.classList.toggle('pequeno')
+            div.classList.toggle('grande')
+        }
+        function mudarCor(cor){
+            div.style.backgroundColor=cor;
+        }
+      
+    </script>
+</body>
+</html>
